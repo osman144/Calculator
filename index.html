@@ -95,7 +95,7 @@ const clear = function (){
     secondNumber = "";
     operator = "";
     result = "";
-    $('#first-number').empty();
+    $('#first-number,#second-number,#operator,#result').empty();
 };
 
 $('#button-clear').click(clear);
@@ -123,20 +123,22 @@ $('.operator').click(function(){
 //calculate function 
 
 $("#button-equal").click(function() {
+    firstNumber = parseInt(firstNumber,10);
+    secondNumber = parseInt(secondNumber, 10);
     if(operator==="+"){
-        result = parseInt(firstNumber) + parseInt(secondNumber);
+        result = firstNumber + secondNumber;
         $('#result').text(result);
     } else if (operator === "-") {
-        result = parseInt(firstNumber) - parseInt(secondNumber);
+        result = firstNumber - secondNumber;
         $('#result').text(result);
     } else if (operator === "x") {
-        result = parseInt(firstNumber) * parseInt(secondNumber);
+        result = firstNumber * secondNumber;
         $('#result').text(result);
     } else if (operator === "/") {
-        result = parseInt(firstNumber) / parseInt(secondNumber);
+        result = firstNumber / secondNumber;
         $('#result').text(result);
     } else if (operator === "^") {
-        result = Math.pow(parseInt(firstNumber), parseInt(secondNumber));
+        result = Math.pow(firstNumber, secondNumber);
         $('#result').text(result);
 
     };
