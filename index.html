@@ -133,7 +133,10 @@ $("#button-equal").click(function() {
         result = parseInt(firstNumber) * parseInt(secondNumber);
         $('#result').text(result);
     } else if (operator === "/") {
-        result = parseInt(firstNumber / secondNumber);
+        result = parseInt(firstNumber) / parseInt(secondNumber);
+        $('#result').text(result);
+    } else if (operator === "^") {
+        result = Math.pow(parseInt(firstNumber), parseInt(secondNumber));
         $('#result').text(result);
 
     };
